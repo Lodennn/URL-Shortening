@@ -1,0 +1,115 @@
+.nav {
+  grid-column: content-start / content-end;
+  display: grid;
+  grid-template-columns: min-content max-content 1fr;
+  align-items: center;
+  font-weight: $font-weight-bl;
+  &__list {
+    @include flexList(2rem);
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &__link {
+    color: $color-gray-light-2;
+    text-decoration: none;
+  }
+  &__cta {
+    margin-left: auto;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+}
+
+.mob-nav {
+  &__button {
+    width: 5rem;
+    height: 5rem;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 3rem;
+    right: 5rem;
+    z-index: 99999;
+    cursor: pointer;
+    display: none;
+    @include respond(tab-port) {
+      display: flex;
+    }
+  }
+  &__trigger {
+    width: 2.5rem;
+    background: $color-primary;
+    height: 3px;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background: $color-primary;
+      width: 2.5rem;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    &:before {
+      top: -0.7rem;
+    }
+    &:after {
+      bottom: -0.7rem;
+    }
+  }
+  &:hover &__trigger:before {
+    top: -0.8rem;
+  }
+  &:hover &__trigger:after {
+    bottom: -0.8rem;
+  }
+}
+
+.mob-nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  background: $color-secondary;
+  // display: flex;
+  justify-content: center;
+  z-index: 999;
+  width: 50%;
+  margin: 10rem auto;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+  padding: 4rem;
+  overflow-y: hidden;
+  transition: all 0.5s ease;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  &__item {
+    margin-bottom: 3rem;
+    &:last-child {
+      display: flex;
+      width: 100%;
+      a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  &__link {
+    color: $color-white;
+    font-size: 2rem !important;
+    font-weight: $font-weight-bl;
+  }
+  &--hidden {
+    height: 0;
+    padding: 0 4rem;
+  }
+}

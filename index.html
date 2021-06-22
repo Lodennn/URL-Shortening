@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <script defer src="js/all.min.js"></script>
+    <script defer src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>URL Shortening</title>
+  </head>
+  <body>
+    <!-- Mob Nav -->
+    <div class="mob-nav__button">
+      <div class="mob-nav__trigger"></div>
+    </div>
+
+    <div class="mob-nav mob-nav--hidden">
+      <ul class="mob-nav__list list-unstyled nav__list--items">
+        <li class="mob-nav__item"><a href="#search-content" class="mob-nav__link">Features</a></li>
+        <li class="mob-nav__item"><a href="#features-content" class="mob-nav__link">Pricing</a></li>
+        <li class="mob-nav__item"><a href="#pricing-content" class="mob-nav__link">Resources</a></li>
+        <span class="separator"></span>
+        <li class='mob-nav__item'><a href="#login" class='btn btn--secondary rounded--hard mob-nav__link'>Login</a></li>
+        <li class='mob-nav__item'><a href="#signup" class='btn btn--primary rounded--hard mob-nav__link'>Signup</a></li>
+      </ul>
+    </div>
+    <!-- Mob Nav -->
+
+    <!-- User Forms -->
+    <!-- <div class="user-forms-overlay"></div> -->
+    <div class="user-forms hidden">
+      <!-- Login -->
+      <form class="user-form user-form--login" id='login'>
+      <!-- <form class="login" id='login'> -->
+        <a href='#home' class="user-form__close">&times;</a>
+        <h3 class="user-form__heading">Login</h3>
+        <div class="user-form__group">
+          <input
+            type="email"
+            placeholder="Enter Email Address"
+            class="form-control input-email--login"
+            data-secure='rexCheck'
+            data-type='login-email'
+          />
+        </div>
+        <div class="user-form__group">
+          <input
+            type="password"
+            placeholder="Enter Password"
+            class="form-control input-password--login"
+            data-type='login-password'
+          />
+        </div>
+        <input type='submit' class="btn btn--primary rounded--hard" value='Login' />
+      </form>
+      
+      <!-- Signup -->
+      <form class="user-form user-form--signup" id='signup'>
+        <a href='#home' class="user-form__close">&times;</a>
+        <h3 class="user-form__heading">Signup</h3>
+        <div class="user-form__group">
+          <input
+          type="text"
+          placeholder="Enter Username"
+          class="form-control input-username--signup"
+          data-secure='rexCheck'
+          />
+        </div>
+        <div class="user-form__group">
+            <input
+              type="email"
+              placeholder="Enter Email Address"
+              class="form-control input-email--signup"
+              data-secure='rexCheck'
+              data-type='signup-email'
+            />
+          </div>
+          <div class="user-form__group">
+            <input
+              type="password"
+              placeholder="Enter Password"
+              class="form-control input-password--signup"
+            />
+          </div>
+          <div class="user-form__group">
+            <input
+              type="password"
+              placeholder="Re-Enter Password"
+              class="form-control input-repassword--signup"
+            />
+          </div>
+          <div class="user-form__group">
+            <input
+              type="text"
+              placeholder="Enter your favourite websites - facebook, twitter, etc"
+              class="form-control input-favsites--signup"
+            />
+          </div>
+          <input type='submit' class="btn btn--primary rounded--hard" value='Signup' />
+        </form>
+      </div>
+    </div>
+    <!-- User Forms -->
+    <!-- Container -->
+    <div class="container">
+      <!-- Nav -->
+      <div class="nav">
+        <div class="logo">Shortly</div>
+        <ul class="nav__list list-unstyled nav__list--items">
+          <li class="nav__item"><a href="#search-content"  class="nav__link">Features</a></li>
+          <li class="nav__item"><a href="#features-content" class="nav__link">Pricing</a></li>
+          <li class="nav__item"><a href="#pricing-content" class="nav__link">Resources</a></li>
+        </ul>
+        <div class="nav__cta">
+          <div class="logged-in hidden">
+            <a href="#profile" class="btn btn--secondary username">Lodenn</a>
+            <a href="#home" class="btn btn--secondary logout">Logout</a>
+          </div>
+          <div class="casually">
+            <a href="#login" class="btn btn--secondary">Login</a>
+            <a href="#signup" class="btn btn--primary rounded--hard">Sign up</a>
+          </div>
+        </div>
+      </div>
+      <!-- Nav -->
+
+      <!-- Hero -->
+      <!-- Text -->
+      <section class="hero-container--text">
+        <div class="hero__text">
+          <h1 class="heading-1 mb-sm">More than just shorter links</h1>
+          <p class="paragraph mb-sm">
+            Build your brand's recognition and get detailed insights on how your
+            links are performing
+          </p>
+          <a href="#" class="btn btn--primary rounded--hard">Get Started</a>
+        </div>
+      </section>
+      <!-- Image -->
+      <section class="hero-container--img">
+        <div class="hero__img">
+          <img
+            src="images/illustration-working.svg"
+            alt="Working Illustration Hero Image"
+          />
+        </div>
+      </section>
+      <!-- Search -->
+      <div class="hero-container--search" id='search-content'>
+        <section class="search">
+          <div class="filter-layer border-round-xs"></div>
+          <form action="" class="search__form">
+            <div class="search__group">
+              <input
+                type="text"
+                class="search__input"
+                placeholder="Shorten a link here..."
+                required
+              />
+              <button class="btn btn--primary rounded--soft flex-centered search__cta"
+                >Shorten It!</button
+              >
+            </div>
+          </form>
+        </section>
+        <ul class="search__results list-unstyled">
+          <li></li>
+          <!-- <li class="search__result">
+            <div class="search__result--url">www.facebook.com/lodenn</div>
+            <div class="search__result--shorten">www.fb.com/ld</div>
+            <a href="#" class='btn btn--primary rounded--soft'>Copy</a>
+          </li>
+          <li class="search__result">
+            <div class="search__result--url">www.facebook.com/lodenn</div>
+            <div class="search__result--shorten">www.fb.com/ld</div>
+            <a href="#" class='btn btn--primary rounded--soft copied'>Copied!</a>
+          </li>
+          <li class="search__result">
+            <div class="search__result--url">www.facebook.com/lodenn</div>
+            <div class="search__result--shorten">www.fb.com/ld</div>
+            <a href="#" class='btn btn--primary rounded--soft'>Copy</a>
+          </li> -->
+        </ul>
+      </div>
+      <!-- Hero -->
+
+      <!-- Features -->
+      <section class="features-section" id='features-content'>
+        <div class="section-intro">
+          <h2 class="heading-2">Advanded Statistics</h2>
+          <p class="paragraph">
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
+        <div class="features">
+          <div class="feature feature--1">
+            <div class="feature__img">
+              <img
+                src="images/icon-brand-recognition.svg"
+                class="feature__icon"
+              />
+            </div>
+            <h3 class="feature__heading">Brand Recogintion</h3>
+            <p class="feature__text">
+              Boost your brand recognition with each click. Generic links don't
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </p>
+          </div>
+          <div class="feature feature--2">
+            <div class="feature__img">
+              <img
+                src="images/icon-detailed-records.svg"
+                class="feature__icon"
+              />
+            </div>
+            <h3 class="feature__heading">Detailed Records</h3>
+            <p class="feature__text">
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps infrorm better
+              decisions.
+            </p>
+          </div>
+          <div class="feature feature--3">
+            <div class="feature__img">
+              <img
+                src="images/icon-fully-customizable.svg"
+                class="feature__icon"
+              />
+            </div>
+            <h3 class="feature__heading">Fully Customizable</h3>
+            <p class="feature__text">
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Features -->
+
+      <!-- Boost -->
+      <section class="boost" id="pricing-content">
+        <div class="filter-layer"></div>
+        <h2 class="heading-3 mb-md">Boost your links today</h2>
+        <a href="#" class="btn btn--primary rounded--hard">Get Started</a>
+      </section>
+      <!-- Boost -->
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="logo">Shortly</div>
+        <ul class="footer__list list-unstyled footer__list--1">
+          <h4 class="footer__list--title">Features</h4>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Link Shortening</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Branded Links</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Analytics</a>
+          </li>
+        </ul>
+        <ul class="footer__list list-unstyled footer__list--2">
+          <h4 class="footer__list--title">Resources</h4>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Blog</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Developers</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Support</a>
+          </li>
+        </ul>
+        <ul class="footer__list list-unstyled footer__list--3">
+          <h4 class="footer__list--title">Company</h4>
+          <li class="footer__item">
+            <a href="#" class="footer__link">About</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Our Team</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Careers</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Contact</a>
+          </li>
+        </ul>
+        <ul class="socials list-unstyled">
+          <li class="socials__item">
+            <a href="#" class="socials__link"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link"><i class="fab fa-google"></i></a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+        </ul>
+      </footer>
+      <!-- Footer -->
+    </div>
+    <!-- Container -->
+  </body>
+</html>

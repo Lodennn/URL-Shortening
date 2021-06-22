@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @include respond(tab-land) {
+    font-size: 56.5%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  @include respond(phone) {
+    font-size: 37.5%;
+  }
+}
+
+body {
+  font-weight: $font-weight-md;
+  font-size: $font-size-default;
+  line-height: 1.4;
+  color: $color-gray-light-2;
+  font-family: $font-primary;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [gutter-start] minmax($gutter, 1fr) [content-start] repeat(
+      12,
+      [col-start] minmax(min-content, 9.5rem) [col-end]
+    )
+    [content-end] minmax($gutter, 1fr) [gutter-end];
+  grid-template-rows: 10rem repeat(5, min-content);
+}
+
+a {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.section-intro {
+  grid-row: 1 / 2;
+  grid-column: feature-content-start / feature-content-end;
+  text-align: center;
+}
+
+button,
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}

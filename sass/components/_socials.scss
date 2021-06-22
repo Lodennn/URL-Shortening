@@ -1,0 +1,16 @@
+.socials {
+  display: flex;
+  &__item {
+    margin-right: 2rem;
+    .socials__link {
+      color: $color-white;
+      font-size: 2rem;
+    }
+  }
+  @include respond(tab-port) {
+    display: flex;
+    grid-column: 2 / -2;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+}

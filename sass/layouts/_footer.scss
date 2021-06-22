@@ -1,0 +1,72 @@
+.footer {
+  grid-column: gutter-start/gutter-end;
+
+  display: grid;
+  //   grid-template-columns: 2fr repeat(4, 1fr);
+  grid-template-columns:
+    [feature-gutter-start] minmax(6rem, 1fr) [feature-content-start] repeat(
+      6,
+      1fr
+    )
+    [feature-content-end] minmax(6rem, 1fr) [feature-gutter-end];
+  background: $color-blue-dark-2;
+  padding: 5rem 0;
+
+  @include respond(tab-port) {
+    grid-template-columns:
+      [feature-gutter-start] minmax(6rem, 1fr) 1fr minmax(6rem, 1fr)
+      [feature-gutter-end];
+    grid-template-rows: repeat(4, min-content);
+    text-align: center;
+  }
+
+  .logo {
+    color: $color-white;
+    grid-column: 2;
+    margin-right: auto;
+    @include respond(tab-port) {
+      grid-column: 2 / -2;
+      margin-bottom: 2rem;
+      margin-right: 0 !important;
+    }
+  }
+  &__list {
+    color: $color-white;
+    &--1 {
+      grid-column: 4;
+      @include respond(tab-port) {
+        grid-row: 2;
+        grid-column: 2 / -2;
+      }
+    }
+    &--2 {
+      grid-column: 5;
+      @include respond(tab-port) {
+        grid-column: 2 / -2;
+      }
+    }
+    &--3 {
+      grid-column: 6;
+      @include respond(tab-port) {
+        grid-column: 2 / -2;
+      }
+    }
+    &--4 {
+      grid-column: 7;
+    }
+    &--title {
+      font-weight: $font-weight-bl;
+      margin-bottom: 2rem;
+    }
+  }
+  &__item {
+    margin-bottom: 1rem;
+  }
+  &__link {
+    color: $color-gray-light;
+    transition: all 0.4s ease;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

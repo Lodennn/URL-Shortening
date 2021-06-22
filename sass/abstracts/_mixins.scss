@@ -1,0 +1,33 @@
+// Flex List
+@mixin flexList($margin) {
+  display: flex;
+  align-items: center;
+  & > li:not(:last-child) {
+    margin-right: $margin;
+  }
+}
+
+@mixin respond($bp) {
+  @if $bp == "phone" {
+    @media screen and (max-width: 37.5rem) {
+      @content;
+    }
+  }
+  @if $bp == "tab-port" {
+    @media screen and (max-width: 56.25rem) {
+      @content;
+    }
+  }
+  @if $bp == "tab-land" {
+    // 1200px / 16px
+    @media screen and (max-width: 75rem) {
+      @content;
+    }
+  }
+  @if $bp == "big-desktop" {
+    // 1200px / 16px
+    @media screen and (min-width: 112rem) {
+      @content;
+    }
+  }
+}

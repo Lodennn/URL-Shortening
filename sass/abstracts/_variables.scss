@@ -1,0 +1,45 @@
+// Layout
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// Colors
+
+// Primary
+
+$color-primary: hsl(180, 66%, 49%);
+$color-secondary: hsl(257, 27%, 26%);
+$color-secondary-light: #544a6e;
+
+// Secondary
+
+$color-tertiary: hsl(0, 87%, 67%);
+
+// Neutral
+
+$color-gray-light: hsl(0, 0%, 75%);
+$color-gray-light-2: hsl(257, 7%, 63%);
+$color-gray-light-3: #f0f1f6;
+
+$color-blue-dark: hsl(255, 11%, 22%);
+$color-blue-dark-2: hsl(260, 8%, 14%);
+
+$color-white: #fff;
+
+// Typography
+
+// Body Copy
+
+$font-size-default: 1.8rem;
+
+// Fonts
+
+// Family: [Poppins](https://fonts.google.com/specimen/Poppins);
+
+$font-weight-md: 500;
+$font-weight-bl: 700;
+
+$font-primary: "Poppins", sans-serif;
+
+// Gutters
+$gutter: 6rem;
